@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen Prank</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        #loading {
+            font-size: 24px;
+            text-align: center;
+        }
+        .loader {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <div class="loader"></div>
+        <p id="message">Loading... Please wait.</p>
+    </div>
+    <script>
+        const messages = [
+            "Just kidding, I'm loading forever!",
+            "Loading your life choices...",
+            "Almost there... maybe...",
+            "Loading your jokes...",
+            "Still loading... how about a coffee?",
+            "Loading the secrets of the universe...",
+            "Hang tight! Your patience is appreciated!",
+            "Loading... This might take a while..."
+        ];
+
+        let messageIndex = 0;
+
+        // Change message every 3 seconds
+        setInterval(() => {
+            messageIndex = (messageIndex + 1) % messages.length; // Loop through messages
+            document.getElementById("message").innerText = messages[messageIndex];
+        }, 3000);
+    </script>
+</body>
+</html>
